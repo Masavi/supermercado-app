@@ -1,11 +1,14 @@
 import React from 'react';
-import HolaMundo from './components/HolaMundo';
+import Navigation from './components/Navigation';
+import Articulos from './components/Articulos';
 
 function App() {
   return (
     <React.Fragment>
-      <h1>App Component</h1>
-      <HolaMundo />
+      <Navigation />
+      <div className="container mt-4">
+        <Articulos />
+      </div>
     </React.Fragment>
   );
 }
