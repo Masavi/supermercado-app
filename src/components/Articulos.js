@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {
-  Card, CardText, CardBody, CardTitle,
-} from 'reactstrap';
+import Articulo from './Articulo';
 
 class Articulos extends Component {
   state = {
@@ -33,14 +31,10 @@ class Articulos extends Component {
           <span>Se encontraron {articulos.length} artículos</span>
           { articulos.map(articulo => {
             return (
-              <Card className="mt-3" style={{ backgroundColor: '#ae51f5' }}>
-                <CardBody>
-                  <CardTitle style={{ color: 'white' }}>{ articulo.nombre }</CardTitle>
-                  <CardText style={{ color: 'white' }}>
-                    {`Existencias: ${articulo.existencias} - Precio: ${articulo.precio}`}
-                  </CardText>
-                </CardBody>
-              </Card>
+              <Articulo 
+                precio={articulo.precio}
+                existencias={articulo.existencias}
+                nombre={articulo.nombre} />
             )
           })}
         </React.Fragment>
