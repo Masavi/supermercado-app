@@ -1,17 +1,18 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import Navigation from './components/Navigation';
-// import Articulos from './components/Articulos';
-import CrearArticulo from './components/CrearArticulo';
+import routes from './Routes';
 
 function App() {
   return (
-    <React.Fragment>
+    <Router>
       <Navigation />
       <div className="container mt-4">
-        {/* <Articulos /> */}
-        <CrearArticulo />
+        <Switch>
+          { routes }
+        </Switch>
       </div>
-    </React.Fragment>
+    </Router>
   );
 }
 
